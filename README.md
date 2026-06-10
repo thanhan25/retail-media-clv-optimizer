@@ -6,9 +6,7 @@ An end-to-end cloud data analytics pipeline designed to ingest, segment, and mod
 
 Click the dashboard image below to interact with the live, fully functional report in Looker Studio!
 
-[![Retail Media Dashboard Preview](dashboard-preview.png)](PASTE_YOUR_PUBLIC_LOOKER_STUDIO_SHARE_LINK_HERE)
-
-* can view. Ensure your link starts with `https://lookerstudio.google.com/...`*
+[![https://datastudio.google.com/reporting/65582cb0-b14a-49f3-ba38-d774935feb10](dashboard-preview.png)](PASTE_YOUR_PUBLIC_LOOKER_STUDIO_SHARE_LINK_HERE)
 
 > 📊 **[Access the Live Interactive Looker Studio Campaign Dashboard](https://datastudio.google.com/reporting/65582cb0-b14a-49f3-ba38-d774935feb10)**
 
