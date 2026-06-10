@@ -6,7 +6,49 @@ An end-to-end cloud data analytics pipeline designed to ingest, segment, and mod
 
 Click the dashboard image below to interact with the live, fully functional report in Looker Studio!
 
-[![https://datastudio.google.com/reporting/65582cb0-b14a-49f3-ba38-d774935feb10](dashboard-preview.png)](PASTE_YOUR_PUBLIC_LOOKER_STUDIO_SHARE_LINK_HERE)
+[![Retail Media Dashboard](dashboard-preview.png)](https://lookerstudio.google.com/reporting/65582cb0-b14a-49f3-ba38-d774935feb10)
+
+🔗 [Access the Live Interactive Looker Studio Campaign Dashboard](https://lookerstudio.google.com/reporting/65582cb0-b14a-49f3-ba38-d774935feb10)
+
+# 3. Commit the visual asset safely
+
+git commit -m "docs: link high-res dashboard asset image and fix cloud rendering path"
+
+# 4. Push it live to your repository storefront
+
+git push origin main
+
+# 3. Commit the visual asset safely
+
+git commit -m "docs: link high-res dashboard asset image and fix cloud rendering path"
+
+# 4. Push it live to your repository storefront
+
+git push origin main
+
+# 3. Commit the visual asset safely
+
+git commit -m "docs: link high-res dashboard asset image and fix cloud rendering path"
+
+# 4. Push it live to your repository storefront
+
+git push origin main
+
+# 3. Commit the visual asset safely
+
+git commit -m "docs: link high-res dashboard asset image and fix cloud rendering path"
+
+# 4. Push it live to your repository storefront
+
+git push origin main
+
+# 3. Commit the visual asset safely
+
+git commit -m "docs: link high-res dashboard asset image and fix cloud rendering path"
+
+# 4. Push it live to your repository storefront
+
+git push origin main
 
 > 📊 **[Access the Live Interactive Looker Studio Campaign Dashboard](https://datastudio.google.com/reporting/65582cb0-b14a-49f3-ba38-d774935feb10)**
 
