@@ -1,0 +1,5 @@
+﻿gcp-key.json
+data/
+venv/
+__pycache__/
+.pytest_cache/

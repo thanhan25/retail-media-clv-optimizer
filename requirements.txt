@@ -1,0 +1,5 @@
+pandas==2.2.2
+google-cloud-bigquery==3.25.0
+lifetimes==0.11.3
+scikit-learn==1.5.0
+db-dtypes==1.2.0
