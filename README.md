@@ -57,7 +57,3 @@ Execute the unified testing matrices locally and generate comprehensive code hea
 ```bash
 python -m pytest
 ```
-
-```
-
-```

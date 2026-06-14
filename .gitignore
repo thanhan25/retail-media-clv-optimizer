@@ -3,3 +3,9 @@ data/
 venv/
 __pycache__/
 .pytest_cache/
+
+.env
+.coverage
+*.egg-info/
+.pytest_cache/
+__pycache__/
