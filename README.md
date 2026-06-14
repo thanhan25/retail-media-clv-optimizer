@@ -7,7 +7,28 @@
 
 A production-grade predictive business intelligence engine designed to transform raw transactional data lake records into decision-ready Customer Lifetime Value (CLV) forecasts. This architecture isolates statistical frequency calculations, models customer retention variances, and implements defensive data validation layers to assist Sales Operations, Logistics, and Finance teams.
 
-## 🏗️ Architecture Design & Quality Standards
+## 🏗️ System Architecture & Data Flow
+
+```text
+ 📥 Raw Ingestion Streams (BigQuery / CSV)
+           │
+           ▼
+ 🛠️ [Data Sanitation Vault] ──> Filter Zero/Negative Purchases & Missing IDs
+                                             │
+                                             ▼
+ 🔄 [RFM Feature Matrix Map] ──> Group Transaction Recency, Frequency & T
+                                             │
+                                             ▼
+ 📈 [BG/NBD Probability Loop]──> Calculate 90-Day Expected Purchase Rate
+                                             │
+                                             ▼
+ 💰 [Gamma-Gamma Submodel]   ──> Compute Dynamic Monetary Value Variance
+                                             │
+                                             ▼
+ 🚀 [Predictive CLV Export]  ──> Push 12-Month Lifetime Value to Cloud Tables
+```
+
+## 🧠 Architecture Design & Quality Standards
 
 - **PEP 517 Build Standards:** Engineered using modern, robust package distributions (`pyproject.toml` with `setuptools` find maps) to ensure predictable, environment-isolated execution.
 - **Context-Managed Storage Layers:** Implements zero-dangling connection context loops to handle active data storage sessions with automated transaction rollbacks under driver exception conditions.
@@ -36,7 +57,6 @@ retail-media-clv-optimizer/
 └── pyproject.toml           # Unified metadata manifest and distribution configuration
 ```
 
-
 ## 🚀 Installation & Environment Setup
 
 Ensure you have Python 3.11+ active, then clone the repository and install it in editable development mode:
@@ -56,4 +76,8 @@ Execute the unified testing matrices locally and generate comprehensive code hea
 
 ```bash
 python -m pytest
+```
+
+```
+
 ```
