@@ -1,15 +1,18 @@
 import logging
 import sqlite3
+
 from clv_optimizer.database import db_manager
 from clv_optimizer.exceptions import DataLakeExtractionError, ModelFittingInversionError
 
 logger = logging.getLogger("clv_optimizer.pipeline")
+
 
 class RetailMediaCLVEngine:
     """
     Predictive business intelligence pipeline running full-cycle customer
     retention variance evaluations and transactional frequency modeling.
     """
+
     def __init__(self, target_cohort: str):
         if not target_cohort or not target_cohort.strip():
             raise DataLakeExtractionError("Initialization failed: Target cohort indicator cannot be null.")

@@ -1,14 +1,17 @@
-import sqlite3
 import logging
+import sqlite3
 from contextlib import contextmanager
 from typing import Generator
+
 from clv_optimizer.config import settings
 from clv_optimizer.exceptions import DataLakeExtractionError
 
 logger = logging.getLogger("clv_optimizer.database")
 
+
 class DatabaseConnectionManager:
     """Enforces reliable connection states using strict isolation context loops."""
+
     def __init__(self, db_path: str):
         self.db_path = db_path
 
@@ -28,5 +31,6 @@ class DatabaseConnectionManager:
         finally:
             if conn:
                 conn.close()
+
 
 db_manager = DatabaseConnectionManager(db_path=str(settings.DB_PATH))
