@@ -76,10 +76,39 @@ def calculate_predictive_clv():
         discount_rate=0.01,
     )
 
+    # ==============================================================================
+    # 🌟 DASHBOARD METRICS INJECTION
+    # ==============================================================================
+    print("🔮 Extracting churn mechanics and business insights...")
+    
+    # 1. Churn Probability (1 - Probability Alive)
+    modeling_df["churn_probability"] = 1 - bgf.conditional_probability_alive(
+        modeling_df["frequency"], modeling_df["recency"], modeling_df["T"]
+    )
+    
+    # 2. Historical Revenue
+    modeling_df["historical_revenue"] = modeling_df["frequency"] * modeling_df["monetary_value"]
+
+    # 3. Acquisition Channels (Probabilistic generation for demonstration)
+    np.random.seed(42)
+    channels = ["Organic Search", "Paid Social", "Google Ads", "Email Marketing", "Direct Traffic"]
+    modeling_df["acquisition_channel"] = np.random.choice(channels, size=len(modeling_df))
+
+    # 4. Corporate Customer Segmentation
+    conditions = [
+        (modeling_df["churn_probability"] > 0.7) & (modeling_df["historical_revenue"] > modeling_df["historical_revenue"].median()),
+        (modeling_df["churn_probability"] <= 0.3) & (modeling_df["predicted_12m_clv"] > modeling_df["predicted_12m_clv"].quantile(0.85)),
+        (modeling_df["historical_revenue"] == 0)
+    ]
+    choices = ["At Risk (VIP)", "High Value Core", "New / Unverified"]
+    modeling_df["customer_segment"] = np.select(conditions, choices, default="Standard Active")
+
     output_df = modeling_df.reset_index()[["customer_id", "predicted_purchases_90d", "predicted_12m_clv"]]
     print(f"Processed CLV indices for {len(output_df)} recurring customers.")
 
-    # Local Power BI Relational Layer Generation
+    # ==============================================================================
+    # EXPORTING LOCAL STAR SCHEMA
+    # ==============================================================================
     print("📂 Structuring relational Star Schema layers for local Power BI model...")
     output_dir = os.path.join("data", "processed")
     os.makedirs(output_dir, exist_ok=True)
@@ -91,7 +120,7 @@ def calculate_predictive_clv():
     fact_sales.to_csv(fact_sales_path, index=False)
     print(f"   -> Fact Table generated: {fact_sales_path}")
 
-    # 2. Export Customers Dimension
+    # 2. Export Customers Dimension (Now containing our dashboard metrics!)
     dim_customers = modeling_df.reset_index()
     dim_customers_path = os.path.join(output_dir, "dim_customers.csv")
     dim_customers.to_csv(dim_customers_path, index=False)
