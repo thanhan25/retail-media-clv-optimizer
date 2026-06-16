@@ -1,4 +1,3 @@
-
 # Retail Media CLV Optimizer 📊
 
 [![Continuous Integration Quality Gate](https://github.com/thanhan25/retail-media-clv-optimizer/actions/workflows/ci.yml/badge.svg)](https://github.com/thanhan25/retail-media-clv-optimizer/actions)
@@ -6,6 +5,8 @@
 ![Test Coverage](https://img.shields.io/badge/coverage-98.67%25-green.svg)
 
 A production-grade predictive business intelligence engine designed to transform raw transactional data lake records into decision-ready Customer Lifetime Value (CLV) forecasts. This architecture isolates statistical frequency calculations, models customer retention variances, and implements defensive data validation layers to assist Sales Operations, Logistics, and Finance teams.
+
+![Predictive CLV Dashboard](dashboard-preview.PNG)
 
 ## 🏗️ System Architecture & Data Flow
 
